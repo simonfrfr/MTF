@@ -88,7 +88,7 @@ void MainWindow::getRectangle(Point Initial, Point Final){
         flip(I, patch2,1);
         I = patch2;
     }
-    sendData(get<2>(res),get<1>(res),QString("Frequency, Cycles/pixel"),QString("SFR (MTF)"),1);
+    sendData(get<2>(res),get<1>(res),QString("Frequency, LP/mm"),QString("SFR (MTF)"),1);
     sendData(get<4>(res),get<3>(res),QString("4x Oversample Value"),QString("Occurances"),2);
     sendData(get<8>(res),get<7>(res),QString("Y (Pix)"),QString("X (Pix)"),3);
     fitLineMat(Initial,get<5>(res),get<6>(res), I);

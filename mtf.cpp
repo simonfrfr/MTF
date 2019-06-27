@@ -316,7 +316,7 @@ tuple<Mat,Mat> MTF::GetResponse(Mat psf, double angle){
   cout <<"Correction: "<< 4.0 / ((double) N) / slant_correction << endl;
   for (int i =0; i < rw;i++) {
     magnitude[i] /= tempD;
-    attns.at<double>(i,0) = ((double) i+3) * 4.0 / ((double) N) / slant_correction;
+    attns.at<double>(i,0) = ((double) i+3) * 4.0 / ((double) N) / slant_correction/5.2*1000;
     double sinc = (sin(M_PI*((double) i+3)/((double) w))/(M_PI*((double) i)/((double) w)));
     freqs.at<double>(i,0) = (i+3 >= rw)?0:magnitude[i+3]; // /sinc/sinc;
     //cout << "<"<<magnitude.at<double>(i,0)<<","<<freqs.at<double>(i,0)<<"," <<attns.at<double>(i,0) <<">" << endl;
